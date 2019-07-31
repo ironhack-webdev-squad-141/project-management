@@ -101,6 +101,9 @@ app.use("/api/tasks", tasks);
 const auth = require("./routes/auth");
 app.use("/api/auth", auth);
 
+const slack = require("./routes/slack");
+app.use("/api/slack", slack);
+
 app.use((req, res) => {
   // If no routes match, send them the React HTML.
   res.sendFile(__dirname + "/client/build/index.html");
